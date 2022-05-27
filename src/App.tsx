@@ -1,23 +1,36 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next';
 import logo from './logo.svg'
 import './App.css'
+import { changeLanguage } from 'i18next';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { t, i18n } = useTranslation()
+
+  const [currentLang, setCurrentLang] = useState(i18n.language)
+  useEffect(()=>{
+    i18n.changeLanguage(currentLang)
+  }, [currentLang])
+
+  useEffect(()=> {
+    document.title = t('title')
+  }, [i18n.language])
+
+  const toggleLang = ()=>{
+    setCurrentLang((count) => count === "en"? "nl": "en")
+  }
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
+        <p>{t('hello-vite-react')}</p>
         <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
+          <button type="button" onClick={toggleLang}>
+            {t('count-is')}{currentLang}
           </button>
         </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
+        <p dangerouslySetInnerHTML={{ __html: t('edit-app-tsx-and-save-to-test-hmr-updates')}}></p>
         <p>
           <a
             className="App-link"
@@ -25,7 +38,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            {t('learn-react')}
           </a>
           {' | '}
           <a
@@ -34,8 +47,9 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Vite Docs
+            {t('vite-docs')}
           </a>
+          <a onClick={toggleLang}>{currentLang}</a>
         </p>
       </header>
     </div>
