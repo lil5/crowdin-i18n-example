@@ -6,6 +6,7 @@ import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import App from './App'
 import './index.css'
+import { L_EN } from './constants';
 
 i18n
   .use(initReactI18next)
@@ -17,8 +18,8 @@ i18n
       loadPath: '/i18n/{{lng}}.json',
     },
 
-    lng: "en", // if you're using a language detector, do not define the lng option
-    fallbackLng: "en",
+    //lng: L_EN, // if you're using a language detector, do not define the lng option
+    fallbackLng: L_EN,
     interpolation: {
       escapeValue: false // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape
     }

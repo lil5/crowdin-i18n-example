@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import logo from './logo.svg'
 import './App.css'
 import { changeLanguage } from 'i18next';
+import { L_EN, L_NL } from './constants';
 
 function App() {
   const { t, i18n } = useTranslation()
@@ -17,7 +18,7 @@ function App() {
   }, [i18n.language])
 
   const toggleLang = ()=>{
-    setCurrentLang((count) => count === "en"? "nl": "en")
+    setCurrentLang((count) => count === L_EN? L_NL: L_EN)
   }
 
   return (
