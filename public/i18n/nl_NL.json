@@ -1,0 +1,8 @@
+{
+   "title": "Vite App",
+   "hello-vite-react": "Hallo Vite + React!",
+   "count-is": "aantal is: ",
+   "edit-app-tsx-and-save-to-test-hmr-updates": "Bewerk <code>App.tsx</code> en sla deze op om HMR updates te testen.",
+   "learn-react": "Leer React",
+   "vite-docs": "Vite Docs"
+}
