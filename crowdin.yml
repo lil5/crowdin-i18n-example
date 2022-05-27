@@ -1,0 +1,3 @@
+files:
+  - source: /public/i18n/en_US.json
+    translation: /public/i18n/%locale_with_underscore%.json
