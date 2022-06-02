@@ -1,3 +1,6 @@
+project_id_env: CROWDIN_PROJECT_ID
+api_token_env: CROWDIN_PERSONAL_TOKEN
+
 files:
   - source: /public/i18n/en_US.json
     translation: /public/i18n/%locale_with_underscore%.json
