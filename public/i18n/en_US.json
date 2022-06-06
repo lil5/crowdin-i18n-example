@@ -4,5 +4,6 @@
    "count-is":"count is: ",
    "edit-app-tsx-and-save-to-test-hmr-updates": "Edit <code>App.tsx</code> and save to test HMR updates.",
    "learn-react": "Learn React",
+   "new-key": "New key",
    "vite-docs": "Vite Docs"
  }
